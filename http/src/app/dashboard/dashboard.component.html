@@ -1,0 +1,53 @@
+<thf-page-default
+  t-title="Dashboard"
+  [t-actions]="actions"
+  [t-breadcrumb]="breadcrumb">
+
+  <div class="thf-row">
+    <thf-widget class="thf-md-6">
+      <thf-chart
+        t-title="Items Purchased"
+        t-type="donut"
+        [t-series]="itemsPurchased">
+      </thf-chart>
+    </thf-widget>
+
+    <thf-widget class="thf-md-6">
+      <thf-chart
+        t-title="Best sellers"
+        t-type="pie"
+        [t-series]="bestSellers">
+      </thf-chart>
+    </thf-widget>
+  </div>
+
+  <hr>
+
+  <div class="thf-row">
+    <thf-widget class="thf-lg-12">
+      <thf-table
+        [t-columns]="columns"
+        [t-items]="products">
+      </thf-table>
+    </thf-widget>
+  </div>
+
+</thf-page-default>
+
+<thf-modal
+  t-title="Share dashboard"
+  [t-primary-action]="shareAction"
+  [t-secondary-action]="cancelAction">
+
+  <form #formShare="ngForm">
+    <thf-email
+      class="thf-lg-12"
+      name="email"
+      [(ngModel)]="email"
+      t-clean
+      t-label="Type an e-mail for sharing"
+      t-required>
+    </thf-email>
+  </form>
+
+</thf-modal>

@@ -1,0 +1,10 @@
+<thf-page-login
+  t-hide-remember-user
+  t-password-pattern="^(\d*)$"
+  t-recovery-url="http://totvs.com"
+  t-register-url="http://totvs.com"
+  [t-loading]="loading"
+  (t-login-submit)="checkLogin($event)">
+</thf-page-login>
+
+<!-- t-login-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" --> 

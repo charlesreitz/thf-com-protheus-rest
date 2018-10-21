@@ -1,0 +1,129 @@
+<thf-page-default t-title="Clientes" 
+  [t-actions]="actions"
+  [t-breadcrumb]="breadcrumb">
+  
+  
+  
+<hr>
+
+  <thf-table
+    t-height="400"
+    t-hide-select-all="true"
+    t-hide-text-overflow
+    t-sort="true"
+    t-striped="true"
+    [t-columns]="columns"
+    [t-items]="clientes">
+  </thf-table>
+
+<hr>
+
+  <thf-modal
+  [t-click-out]="false"
+  [t-hide-close]="false"
+  [t-size]="auto"
+  [t-primary-action]="primaryAction"
+  [t-title]="title">
+
+    <form [formGroup]="reactiveForm">
+      <div class="thf-row">
+        <thf-input
+          class="thf-md-12"
+          formControlName="name"
+          t-clean
+          t-icon="thf-icon-user"
+          t-label="Customer name">
+        </thf-input>
+      </div>
+    
+      <div class="thf-row">
+        <thf-input
+          class="thf-lg-9"
+          formControlName="address"
+          t-clean
+          t-icon="thf-icon-pin"
+          t-label="Address">
+        </thf-input>
+    
+        <thf-number
+          class="thf-lg-3"
+          formControlName="number"
+          t-label="Number"
+          t-clean>
+        </thf-number>
+      </div>
+    
+      <div class="thf-row">
+        <thf-email
+          class="thf-lg-6"
+          formControlName="email"
+          t-label="Email"
+          t-clean>
+        </thf-email>
+    
+        <thf-url
+          class="thf-lg-6"
+          formControlName="website"
+          t-label="Website"
+          t-clean>
+        </thf-url>
+      </div>
+    
+      <div class="thf-row">
+        <thf-button
+          class="thf-md-3"
+          t-label="Save"
+          [t-disabled]="!reactiveForm.valid"
+          (t-click)="saveForm()">
+        </thf-button>
+      </div>
+    </form>
+
+    <thf-modal #reactiveFormData
+      t-title="Save successful"
+      [t-primary-action]="modalPrimaryAction">
+      <div class="thf-row">
+        <thf-info
+          class="thf-md-12"
+          t-label="Name"
+          [t-value]="reactiveForm.controls.name.value">
+        </thf-info>
+      </div>
+
+      <hr>
+
+      <div class="thf-row">
+        <thf-info
+          class="thf-md-6"
+          t-label="Address"
+          [t-value]="reactiveForm.controls.address.value">
+        </thf-info>
+
+        <thf-info
+          class="thf-md-6"
+          t-label="Number"
+          [t-value]="reactiveForm.controls.number.value">
+        </thf-info>
+      </div>
+
+      <hr>
+
+      <div class="thf-row">
+        <thf-info
+          class="thf-md-6"
+          t-label="Email"
+          [t-value]="reactiveForm.controls.email.value">
+        </thf-info>
+
+        <thf-info
+          class="thf-md-6"
+          t-label="Website"
+          [t-value]="reactiveForm.controls.website.value">
+        </thf-info>
+      </div>
+    </thf-modal>
+
+</thf-modal>
+
+  
+</thf-page-default>

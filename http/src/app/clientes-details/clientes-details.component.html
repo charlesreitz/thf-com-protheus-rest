@@ -1,0 +1,72 @@
+<thf-page-edit
+  [t-breadcrumb]="breadcrumb"
+  [t-disable-submit]="formEditCliente.invalid"
+  t-title="Inclusão de Cliente">
+
+  <form #formEditCliente="ngForm">
+    <div class="thf-row">
+      <thf-input
+        class="thf-md-4"
+        name="A1_COD"
+        [(ngModel)]="A1_COD"
+        t-clean
+        t-label="Código"
+        t-disabled="true"
+        t-required="true">
+      </thf-input>
+
+      <thf-input
+        class="thf-md-2"
+        name="A1_LOJA"
+        [(ngModel)]="A1_LOJA"
+        t-clean
+        t-label="Loja"
+        t-disabled="true"
+        t-required="true">
+      </thf-input>
+    </div>
+
+    <div class="thf-row">
+      <thf-input
+        class="thf-md-12"
+        name="A1_NOME"
+        [(ngModel)]="A1_NOME"
+        t-label="Nome"
+        t-maxlength="50"
+        t-minlength="5"
+        t-required="true">
+      </thf-input>
+    </div>
+
+    <div class="thf-row">
+      <thf-input
+        class="thf-md-12"
+        name="A1_NREDUZ"
+        [(ngModel)]="A1_NREDUZ"
+        t-clean
+        t-label="Nome Reduzido/Fantasia"
+        t-maxlength="50"
+        t-minlength="5"
+        t-required="true">
+      </thf-input>
+    </div>
+
+
+    <div class="thf-row">
+      <thf-input
+        class="thf-md-6"
+        name="A1_CGC"
+        [(ngModel)]="A1_CGC"
+        t-clean
+        t-label="CPF/CNPJ"
+        t-maxlength="14"
+        t-minlength="12"
+        t-pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})"
+        t-required="true">
+      </thf-input>
+    </div>
+
+
+  </form>
+
+</thf-page-edit>

@@ -1,0 +1,50 @@
+<thf-page-default t-title="Pedidos">
+  
+  <thf-table
+    t-checkbox
+    t-height="400"
+    t-hide-select-all="true"
+    t-hide-text-overflow
+    t-sort="true"
+    t-striped="true"
+    [t-actions]="actions"
+    [t-columns]="columns"
+    [t-items]="items">
+  </thf-table>
+
+  <hr>
+
+  <div class="thf-row">
+    <thf-button
+      class="thf-md-3"
+      t-icon="thf-icon-cart"
+      t-label="Adicionar"
+      (t-click)="addToCart()">
+    </thf-button>
+  </div>
+
+  <thf-modal
+    t-click-out="true"
+    t-size="sm"
+    t-title="{{detail?.destination}} - {{detail?.country}}">
+
+    <thf-info
+      class="thf-sm-6"
+      t-label="Airline"
+      t-value="{{ detail?.airline }}">
+    </thf-info>
+
+    <thf-info
+      class="thf-sm-2"
+      t-label="Initials"
+      t-value="{{ detail?.initials }}">
+    </thf-info>
+
+    <thf-info
+      class="thf-sm-4"
+      t-label="Class"
+      t-value="{{ detail?.class }}">
+    </thf-info>
+
+  </thf-modal> 
+</thf-page-default>
